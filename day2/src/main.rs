@@ -18,8 +18,6 @@ fn main() -> std::io::Result<()> {
         let sb: &str = &line?;
         let mut v: Vec<&str> = sb.rsplit(&[':', ',', ';'][..]).collect();
         v.truncate(v.len() - 1);
-        //let f = v.clone();
-        //print!("{:?}",v);
 
         for d in v {
             match d.replace(" ", "").as_bytes() {
@@ -40,9 +38,7 @@ fn main() -> std::io::Result<()> {
                 },
                 _ => ()
             }
-            println!("{}", d);
         }
-        println!("B: {} R:{} G:{}", b, r, g);
         sum += b * r * g;
     }
 
